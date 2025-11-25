@@ -232,6 +232,9 @@ color: rgb(255, 94, 0);
           <li class="nav-item">
             <a class="nav-link" href="job.php">求才資訊</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="personal.php">個人資料</a>
+          </li>
         <li class="nav-item">
   <?php if (!empty($_SESSION['user'])): //如果 $_SESSION['user'] 不為空，也就是使用者已登入 ?> 
     <a class="nav-link" href="logout.php">登出</a>

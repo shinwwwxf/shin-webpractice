@@ -3,11 +3,12 @@ session_start();
 include('newheader.php');
 try {
     require_once 'db.php'; 
-    $sql = "SELECT * FROM activity";
+    $sql = "SELECT * FROM newactivity";
     $result = mysqli_query($conn, $sql);
 ?>
 
 <main class="container mt-4">  
+  <a href="activity_insert.php" class="btn btn-danger">新增活動＋</a>
   <form action="" method="post">
     <fieldset>
       <div class="container mt-4">
@@ -20,6 +21,8 @@ try {
                   <h5 class="card-subtitle mb-2 text-muted">
                     <?= htmlspecialchars($row["description"]) ?>
                   </h5>
+                  <a href="activity_update.php?postid=<?= $row['id'] ?>" class="btn btn-primary btn-sm">修改</a>
+                  <a href="activity_delete.php?postid=<?= $row['id'] ?>" class="btn btn-danger btn-sm">刪除</a>
                 </div>
               </div>
             </div>

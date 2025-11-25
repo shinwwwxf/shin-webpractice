@@ -2,7 +2,7 @@
 $name = $_POST['name'] ?? '';
 $role = $_POST['role'] ?? '';
 $program = $_POST['program'] ?? [];
-if ($role === 'T'|| empty($program)) {
+if ($role === 'T'|| $role === 'M'|| empty($program)) {
     $price = 0;
 } else {
     $price = array_sum($program); 

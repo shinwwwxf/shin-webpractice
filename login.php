@@ -15,14 +15,13 @@ require_once 'db.php'; // 連資料庫
 $msg = '';
 
 if ($_POST) {
-    $account = $_POST["account"] ?? "";
-    $password = $_POST["password"] ?? "";
+    $account = mysqli_real_escape_string($conn, $_POST["account"] ?? "");
+    $password = mysqli_real_escape_string($conn, $_POST["password"] ?? "");
 
     if (empty($account) || empty($password)) {
         $msg = "請輸入帳號與密碼";
     } else {
-        // 從資料庫抓帳號
-        $sql = "SELECT * FROM user WHERE account = '$account'";
+        $sql = "SELECT * FROM newuser WHERE account = '$account'";
         $result = mysqli_query($conn, $sql);
 
         if ($result && mysqli_num_rows($result) > 0) {

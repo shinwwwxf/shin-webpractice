@@ -13,7 +13,7 @@ require_once "newheader.php"; // HTML header & Bootstrap 引入
 try {
     require_once 'db.php'; // 引用資料庫連線設定
 
-    $sql = "SELECT * FROM activity";
+    $sql = "SELECT * FROM newactivity";
     $result = mysqli_query($conn, $sql);
 ?>
 <div class="container mt-4">
